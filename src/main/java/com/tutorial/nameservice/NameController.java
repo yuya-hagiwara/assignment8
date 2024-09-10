@@ -1,6 +1,7 @@
 package com.tutorial.nameservice;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -15,8 +16,7 @@ public class NameController {
     }
 
     @GetMapping("/names")
-    public List<Name> getNames() {
-        List<Name> names = nameMapper.findAll();
-        return names;
+    public List<Name> findByNames(@RequestParam String startsWith) {
+        return nameMapper.findByNameStartingWith(startsWith);
     }
 }
