@@ -17,6 +17,6 @@ public class NameController {
 
     @GetMapping("/names")
     public List<Name> findByNames(@RequestParam String startsWith) {
-        return nameMapper.findByNameStartingWith(startsWith);
+        return nameMapper.findByNamestartsWith(startsWith);
     }
 }
