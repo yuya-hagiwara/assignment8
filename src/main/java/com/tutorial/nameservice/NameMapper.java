@@ -11,5 +11,5 @@ public interface NameMapper {
 
 
     @Select("SELECT * FROM names WHERE name LIKE CONCAT(#{prefix}, '%')")
-    List<Name> findByNamestartsWith(String prefix);
+    List<Name> findByNameStartsWith(String prefix);
 }
